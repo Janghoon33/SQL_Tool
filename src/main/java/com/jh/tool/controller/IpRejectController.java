@@ -33,7 +33,7 @@ public class IpRejectController {
 	}
 	
 	//create
-	@PostMapping("/create")
+	@PostMapping("/regiIp")
 	public boolean createReject(@RequestBody sw_database_reject ipReject) {
 		ipRepo.save(ipReject);
 		return true;
@@ -52,7 +52,7 @@ public class IpRejectController {
 	}
 	
 	// delete
-	@DeleteMapping("/delete/{policy_id}")
+	@DeleteMapping("/delIp/{policy_id}")
 	public Map<String,Boolean> deleteReject(@PathVariable(value = "policy_id")Long policy_id){
 		sw_database_reject data = ipRepo.findById(policy_id).orElseThrow();
 		ipRepo.delete(data);
